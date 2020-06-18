@@ -21,11 +21,11 @@ Run the MATLAB script in the GEOS-Chem output file directory. Modified the scrip
 
     (c) simulation_4_5/simulation_2/25: 
         if the resolution of global GEOS-Chem simulation is 2×2.5 degree, please set it as follow.
-            simulation_4_5        = false;
-            simulation_2_25       = true;
+            simulation_4_5               = false;
+            simulation_2_25              = true;
         if the resolution of global GEOS-Chem simulation is 4×5 degree, please set it as follow.
-            simulation_4_5        = true;
-            simulation_2_25       = false;
+            simulation_4_5               = true;
+            simulation_2_25              = false;
     (d) set the time ranges for output file
             startyr                      = 2015;        
             endyr                        = 2015;
