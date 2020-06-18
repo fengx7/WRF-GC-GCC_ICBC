@@ -6,6 +6,7 @@ Step 1
 Run the GEOS-Chem standard full-chemistry/tropchem simulation at a resolution of 2×2.5/4×5 degree (recommend 2×2.5 degree). The running time must cover the WRF-GC simulation period: e.g. if the simulation period of WRF-GC is from 2015-06-10 00:00:00 to 2015-06-20-00:00:00 (UTC), the time ranges for GEOS-Chem can be from 2015-06-07 00:00:00 to 2015-06-21 00:00:00 (UTC). Output the netCDF diagnostic files every 6 hours (00, 06, 12, 18), including
 
 (a) GEOSChem.SpeciesConc.xxxxxxxxxxxxxx.nc4 (contains instantaneous "SpeciesConc_?ADV?")
+
 (b) GEOSChem.StateMet.xxxxxxxxxxxxxx.nc4 (contains "Met_PS1DRY").
 
 Step 2
