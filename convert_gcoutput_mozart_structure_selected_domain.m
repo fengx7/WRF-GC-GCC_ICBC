@@ -7,12 +7,12 @@ filename_met_prefix      = 'GEOSChem.StateMet.';
 filename_spc_prefix      = 'GEOSChem.SpeciesConc.';
 filename_input_suffix    = 'z.nc4';
 spc_suffix               = '_VMR_inst';
-%% selected domain
-lon_left                 = 1;                          % 2x2.5: 0:2.5:357.5 (144)  % 19£º45deg
-lon_right                = 73;                                                     % 65£º160deg
+%% Set domain
+lon_left                 = 1;                          % 2x2.5: 0:2.5:357.5 (144)  
+lon_right                = 73;                                                     
 lat_bottom               = 46;                         % 2x2.5: -89.5(-90):2:89.5(90) (91)
-lat_upper                = 91;                                                     % 81: 70.5deg
-%% time information (mozart data always start at 06:00 and end at 00:00)
+lat_upper                = 91;                                                     
+%% Time information (mozart data always start at 06:00 and end at 00:00)
 startyr        = 2015;
 endyr          = 2015;
 startmon       = 6;
