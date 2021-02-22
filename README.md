@@ -11,7 +11,7 @@ Run the GEOS-Chem standard full-chemistry/tropchem simulation at a resolution of
 
 Step 2
 
-Use the MATLAB script "convert_gcoutput_mozart_structure_new.m" to merge the GEOS-Chem output files and reconstruct the data structure so that mozbc could read it.
+Use the MATLAB script "convert_gcoutput_mozart_structure_selected_domain.m" to merge the GEOS-Chem output files and reconstruct the data structure so that mozbc could read it.
 
 Run the MATLAB script in the GEOS-Chem output file directory. Modified the script before running as follow.
 
@@ -34,12 +34,21 @@ Run the MATLAB script in the GEOS-Chem output file directory. Modified the scrip
             endmon                       = 6;
             startdate                    = 7; 
             enddate                      = 21;
+     (e) Set the domain for output file (need to be larger than your WRF-GC domain)
+         If the resolution of global GEOS-Chem simulation is 2x2.5
+         longitude: 0 (index 1):2.5:357.5 (index 144)
+         latitude : -90 (index 1):2:90 (index 91)
+         Here is an example. 
+            lon_left                     = 1;  % longitude of western lateral condition
+            lon_right                    = 73; % longitude of eastern lateral condition
+            lat_bottom                   = 46; % latitude of southern lateral condition
+            lat_upper                    = 91; % latitude of northern lateral condition
             
 The netCDF file will be generated after running the script.
 
 Step 3
 
-Run mozbc using the generated file. We provide a mozbc input file "GEOSCHEMtest.inp", which contains the default advected species ('SpeciesConc_?ADV?) of GEOS-Chem v12.2.1. If you want to change the species, please modify the "spc_map" in the input file (GEOSCHEMtest.inp), e.g.
+Run mozbc using the generated file. We provide mozbc input files "GEOSCHEM_v12_2_1.inp" and "GEOSCHEM_v12_8_1.inp", which contain the default advected species ('SpeciesConc_?ADV?) of GEOS-Chem v12.2.1 or GEOS-Chem v12.8.1. If you want to change the species, please modify the "spc_map" in the input file, e.g.
  
         'isoprene -> ISOP'
 
